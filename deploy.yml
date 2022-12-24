@@ -1,0 +1,23 @@
+---
+- name: Test
+  hosts: web_servers
+  become: yes
+
+  tasks:
+  - name: Copying project source .zip
+    ansible.builtin.copy:
+      src: /var/lib/jenkins/workspace/DockerWebApp/source.zip
+      dest: /home/vboxuser/docker/www/
+      mode: '0777'
+
+  - name: Extrating files
+    ansible.builtin.unarchive:
+      src: /home/vboxuser/docker/www/source.zip
+      dest: /home/vboxuser/docker/www/
+      remote_src: yes
+
+  - name: Setting directory permissions
+    ansible.builtin.command: find /home/vboxuser/docker/www/ -type d -exec chmod 0777 {} \;
+
+  - name: Setting files permissions
+    ansible.builtin.command: find /home/vboxuser/docker/www/ -type f -exec chmod 0777 {} \;
