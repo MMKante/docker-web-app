@@ -12,11 +12,15 @@ pipeline {
                 sh 'php test'
             }
         }
-        stage('Deploy') {
+        stage('Pre-deployment operations') {
             steps {
-                sh 'echo "Deploying..."'
                 sh 'zip -r source.zip ./'
                 sh 'chmod 0777 source.zip'
+            }
+        }
+        stage('Deployment') {
+            steps {
+                sh 'ansible-playbook -i /home/mmk/docker/hosts.txt /home/mmk/docker/deploy.yml'
             }
         }
     }
