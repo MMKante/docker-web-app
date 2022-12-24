@@ -1,5 +1,5 @@
 <?php
-	$dao = new mysqli('db', 'user', 'password', 'games');
+	$dao = new mysqli('localhost', 'root', '', 'games');
 	if ($dao->connect_error) {
 		die("Connection failed: " . $dao->connect_error);
 	}
