@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'ansible-playbook -i /home/mmk/docker/hosts.txt /home/mmk/docker/deploy.yml'
+                ansiblePlaybook playbook: '/home/mmk/docker/deploy.yml', inventory: '/home/mmk/docker/hosts.txt', credentialsId: 'github_key'
             }
         }
     }
