@@ -1,3 +1,5 @@
 <?php
-	$dao = new PDO('mysql:host=localhost;dbname=games;charset=utf8','user','root');
-	$dao->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
+	$dao = new mysqli('localhost', 'root', '', 'games');
+	if ($dao->connect_error) {
+		die("Connection failed: " . $dao->connect_error);
+	}

@@ -25,24 +25,24 @@
 				<?php
 				foreach ($games as $game) { ?>
 					<div class="card my-2 mx-1" style="width: 18rem;">
-						<img src="<?= $game['thumbnail'] ?>" class="card-img-top" alt="Image">
+						<img src="<?= $game->thumbnail ?>" class="card-img-top" alt="Image">
 						<div class="card-body">
-							<h5 class="card-title"><?= $game['title'] ?></h5>
-							<p class="card-text"><?= $game['short_description'] ?></p>
+							<h5 class="card-title"><?= $game->title ?></h5>
+							<p class="card-text"><?= $game->short_description ?></p>
 						</div>
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">Genre
-								<span class="badge bg-primary"><?= $game['genre'] ?></span>
+								<span class="badge bg-primary"><?= $game->genre ?></span>
 							</li>
 							<li class="list-group-item">Platform
-								<span class="badge bg-primary"><?= $game['platform'] ?></span>
+								<span class="badge bg-primary"><?= $game->platform ?></span>
 							</li>
 							<li class="list-group-item">Publisher
-								<span class="badge bg-primary"><?= $game['publisher'] ?></span>
+								<span class="badge bg-primary"><?= $game->publisher ?></span>
 							</li>
 						</ul>
 						<div class="card-body d-grid">
-							<a href="<?= $game['game_url'] ?>" class="btn btn-block btn-primary" style="height: fit-content;" target="_blank">Open</a>
+							<a href="<?= $game->game_url ?>" class="btn btn-block btn-primary" style="height: fit-content;" target="_blank">Open</a>
 						</div>
 					</div>
 				<?php } ?>
