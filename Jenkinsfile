@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                ansiblePlaybook playbook: '/home/mmk/docker/deploy.yml', inventory: '/home/mmk/docker/hosts.txt'
+                sh 'ansible-playbook -i /home/mmk/docker/hosts.txt /home/mmk/docker/deploy.yml'
             }
         }
     }
