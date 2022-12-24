@@ -1,6 +1,6 @@
 <?php
-	require_once '/home/vboxuser/docker/www/config/db.php';
-	require_once '/home/vboxuser/docker/www/config/functions.php';
+	require_once './config/db.php';
+	require_once './config/functions.php';
 	$games = allGames();
 ?>
 <!DOCTYPE html>
