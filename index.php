@@ -2,6 +2,9 @@
 	require_once './config/db.php';
 	require_once './config/functions.php';
 	$games = allGames();
+	if (empty($games)) {
+		$games = install();
+	}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,7 +22,6 @@
 				</a>
 			</div>
 		</nav>
-		<?php if (!empty($games)) { ?>
 		<div class="container">
 			<div class="row mt-4">
 				<?php
@@ -48,9 +50,6 @@
 				<?php } ?>
 			</div>
 		</div>
-		<?php } else {
-			header('location: ./config/install.php');
-		} ?>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

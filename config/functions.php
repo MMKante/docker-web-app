@@ -28,3 +28,14 @@
 
 		return $games;
 	}
+	function install() {
+		$games = json_decode(file_get_contents('https://www.freetogame.com/api/games'));
+
+		deleteAll();
+
+		foreach ($games as $game) {
+			addGame($game);
+		}
+
+		return allGames();
+	}
