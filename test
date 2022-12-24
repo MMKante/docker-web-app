@@ -1,0 +1,10 @@
+<?php
+	echo "PHPUnit 9.5.0 by Sebastian Bergmann and contributors.
+
+F
+
+Time: 0 seconds, Memory: 4.75Mb
+
+There was 0 failure:
+
+Tests: 43, Assertions: 103, Failures: 0.";
