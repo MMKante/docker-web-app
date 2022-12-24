@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'ansible-playbook -i /home/mmk/docker/hosts.txt /home/mmk/docker/deploy.yml'
+                sh 'ansible-playbook /home/mmk/docker/deploy.yml -i /home/mmk/docker/hosts.txt -u AUTO_USER --private-key=/home/mmk/.ssh/id_rsa'
             }
         }
     }
